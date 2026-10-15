@@ -5,6 +5,8 @@ SRN: PES2UG24CS617
 SECTION: 5J
 
 This project is a card prediction game using **Pygame**. It introduces students to deck state management, lexicographical vs. numerical evaluation, probability assessment, and UI button interaction within an object-oriented codebase.
+
+LLM chat link: https://claude.ai/share/a90c84cd-1905-42c0-8089-350c63072d2f
 ---
 
 ## What's Provided
