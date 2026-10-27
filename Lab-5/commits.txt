@@ -1,0 +1,3 @@
+21638e3 fix(bandit): remove eval, md5, pickle, os.system, hardcoded password, bare except
+a404801 style(flake8): fix PEP8 blank lines, line length, unused imports
+b20aebb refactor(pylint): snake_case names, docstrings, f-strings, no global, with-blocks (10.00/10)

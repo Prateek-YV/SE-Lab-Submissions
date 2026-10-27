@@ -1,0 +1,53 @@
+From a404801c0ad192b89eebdc51d0099d6e37ca1dd0 Mon Sep 17 00:00:00 2001
+From: Prateek-YV <prateekyv1@gmail.com>
+Date: Tue, 27 Oct 2026 05:18:35 +0000
+Subject: [PATCH 2/3] style(flake8): fix PEP8 blank lines, line length, unused
+ imports
+
+---
+ pharmacy_manager.py | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/pharmacy_manager.py b/pharmacy_manager.py
+index ccf63ef..5c66d91 100644
+--- a/pharmacy_manager.py
++++ b/pharmacy_manager.py
+@@ -1,5 +1,4 @@
+ import os
+-import sys
+ import json
+ import ast
+ import operator
+@@ -30,7 +29,8 @@ def addMedicine(name, qty=0, price=0.0, expiry="2099-12-31", audit=None):
+     if name not in medicines:
+         medicines[name] = {"qty": 0, "price": price, "expiry": expiry}
+     medicines[name]["qty"] = medicines[name]["qty"] + qty
+-    audit.append("%s: Stocked %d units of %s" % (str(datetime.now()), qty, name))
++    audit.append(
++        "%s: Stocked %d units of %s" % (str(datetime.now()), qty, name))
+     return audit
+ 
+ 
+@@ -126,7 +126,8 @@ def pharmacistLogin(password):
+ def printStock():
+     print("===== Pharmacy Stock Report =====")
+     for m in medicines:
+-        print(m, "->", medicines[m]["qty"], "units, Rs.", medicines[m]["price"], "exp", medicines[m]["expiry"])
++        print(m, "->", medicines[m]["qty"], "units, Rs.",
++              medicines[m]["price"], "exp", medicines[m]["expiry"])
+ 
+ 
+ def main():
+@@ -138,7 +139,8 @@ def main():
+     dispenseMedicine("Insulin", 2)
+     print("Paracetamol stock:", getQuantity("Paracetamol 500mg"))
+     print("Amoxicillin expired?", isExpired("Amoxicillin 250mg"))
+-    print("Bill:", billAmount([("Paracetamol 500mg", 10), ("Amoxicillin 250mg", 5)]))
++    print("Bill:", billAmount(
++        [("Paracetamol 500mg", 10), ("Amoxicillin 250mg", 5)]))
+     print("Dosage (mg/day):", calculateDosage("250 * 2"))
+     print("Patient ID:", patientId("Asha", "9876543210"))
+     print("Rx number:", generateRxNumber())
+-- 
+2.43.0
+
